@@ -1,9 +1,12 @@
 #include "pch.h"
 #include <iostream>
+#include "map.h"
 
 int main()
 {
 	//Creat new map
+	Map map;
+	map.printMap();
 
 	/*Game loop
 		while game running
@@ -14,5 +17,5 @@ int main()
 
 	//restart game?
 
-	std::cout << "Program ran to the end"; // remove later
+	std::cout << "\nProgram ran to the end"; // remove later
 }
