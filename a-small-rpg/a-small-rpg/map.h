@@ -19,21 +19,31 @@ private:
 public:
 	int mapSizeX = 5;
 	int mapSizeY = 5;
-	void printMap()
+	const void printMap()
 	{
+		std::cout << "#| ";
+		for (int j = 0; j < mapSizeX; j++)
+		{
+			std::cout << j+1 << " ";
+		}
 		for (int i = 0; i < mapSizeX*mapSizeY; i++)
 		{
-			//std::cout << playerMap[i];
 			if ((i % 5) == 0)
 			{
-				std::cout << "\n";
-				std::cout << finalMap[i] << " ";
+				std::cout << "|\n";
+				std::cout << i/5+1 << "| " << playerMap[i] << " ";
 			}
 			else
 			{
-				std::cout << finalMap[i] << " ";
+				std::cout << playerMap[i] << " ";
 			}
 		}
+		std::cout << "|\n";
+	}
+	const void revealZone(int x, int y)
+	{
+		playerMap[(y - 1) * mapSizeY + x - 1] = finalMap[(y - 1) * mapSizeY + x-1];
+		printMap();
 	}
 
 };

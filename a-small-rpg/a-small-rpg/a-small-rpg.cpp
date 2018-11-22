@@ -7,6 +7,9 @@ int main()
 	//Creat new map
 	Map map;
 	map.printMap();
+	std::cout << "revealing map segment 2:3\n";
+	map.revealZone(2, 3);
+	map.printMap();
 
 	/*Game loop
 		while game running
